@@ -1,16 +1,15 @@
-import express from "express";
-import morgan from "morgan";
+import express from 'express'
+import morgan from 'morgan'
+import router from './routes'
 
-const app = express();
+const app = express()
 
-import router from "./routes";
+app.use(express.json())
+app.use(morgan('dev'))
+app.use('/api', router)
 
-app.use(express.json());
-app.use(morgan("dev"));
-app.use('/api',router)
+app.get('/ping', (_, res) => {
+  res.status(200).json({ message: 'pong' })
+})
 
-app.get ('/ping', (_, res) => {
-  res.status(200).json({ message: 'pong' });
-});
-
-export default app;
+export default app

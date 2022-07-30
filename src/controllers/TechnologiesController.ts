@@ -1,45 +1,45 @@
-import { Request, Response } from 'express';
-import { ResponseType } from '../types';
-import Technology from '../schemas/technologySchema';
+import { Request, Response } from 'express'
+import { ResponseType, ResponseRoutes } from '../types'
+import Technology from '../schemas/technologySchema'
 
-async function getTechnologies(_: Request, res: Response<ResponseType>): Promise<void> {
+async function getTechnologies (_: Request, res: Response<ResponseType>): ResponseRoutes {
   try {
-    const techStack = await Technology.find();
+    const techStack = await Technology.find()
 
-    res.status(200).json({
+    return res.status(200).json({
       message: 'Data fetched succesfully',
       data: techStack
-    });
+    })
   } catch (err) {
-    res.status(400).json({
+    return res.status(400).json({
       message: 'Error occurred in get technologies.',
       err
-    });
+    })
   }
 }
 
-async function createOneTechnolgy(req: Request, res: Response<ResponseType>): Promise<void | Response<ResponseType>> {
-  const { name } = req.body;
+async function createOneTechnolgy (req: Request, res: Response<ResponseType>): Promise<void> {
+  const { name } = req.body
 
-  if (!name) {
-    return res.status(400).json({
+  if (name === undefined) {
+    res.status(400).json({
       message: 'Error: Name is required'
-    });
+    })
   }
   try {
-    await Technology.create({ name });
+    await Technology.create({ name })
 
     res.status(200).json({
       message: 'Technology created succesfully.'
-    });
+    })
   } catch (err) {
     res.status(400).json({
       message: 'Error occurred in create one technology.',
       err
-    });
+    })
   }
 }
 
 // async function createTechnologies(_: Request, __: Response<ResponseType>): Promise<void | Response<ResponseType>> {}
 
-export { getTechnologies, createOneTechnolgy };
+export { getTechnologies, createOneTechnolgy }

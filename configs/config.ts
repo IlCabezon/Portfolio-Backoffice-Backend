@@ -1,9 +1,11 @@
 interface config {
-  PORT: string;
-  MONGO_URI: string;
+  PORT: string
+  MONGO_URI: string
 }
 
-export default {
-  PORT: process.env.PORT,
-  MONGO_URI: process.env.MONGO_URI
-} as config;
+const env: config = {
+  PORT: typeof process.env.PORT === 'string' ? process.env.PORT : '',
+  MONGO_URI: typeof process.env.MONGO_URI === 'string' ? process.env.MONGO_URI : ''
+}
+
+export default env

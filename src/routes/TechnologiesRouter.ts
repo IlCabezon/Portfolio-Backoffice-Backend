@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { getTechnologies, createOneTechnolgy } from '../controllers/TechnologiesController';
+import { Router } from 'express'
+import { getTechnologies, createOneTechnolgy } from '../controllers/TechnologiesController'
 
-const router = Router();
+const router = Router()
 
-router.get('/', getTechnologies);
-router.post('/', createOneTechnolgy);
+router.get('/', getTechnologies)
+router.post('/', createOneTechnolgy)
 
-export default router;
+export default router

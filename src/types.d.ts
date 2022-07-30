@@ -1,14 +1,18 @@
+import { Response } from 'express'
+
+export type ResponseRoutes = Promise<Response<ResponseType>>
+
 export interface CacheConnection {
-  connected: boolean;
-  dbName: string;
+  connected: boolean
+  dbName: string
 }
 
 export interface ResponseType {
-  message: string;
-  data?: Array;
-  err?: any | unknown;
+  message: string
+  data?: any[]
+  err?: any | unknown
 }
 
 export interface Technologies {
-  name: string;
+  name: string
 }

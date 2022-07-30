@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose';
-import { Technologies } from '../types';
+import { Schema, model } from 'mongoose'
+import { Technologies } from '../types'
 
 const technologySchema = new Schema<Technologies>({
   name: {
@@ -7,7 +7,7 @@ const technologySchema = new Schema<Technologies>({
     required: true,
     unique: true
   }
-});
+})
 
-const Technology = model<Technologies>('Technology', technologySchema);
-export default Technology;
+const Technology = model<Technologies>('Technology', technologySchema)
+export default Technology

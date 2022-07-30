@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import TechnologiesRouter from './TechnologiesRouter';
+import { Router } from 'express'
+import TechnologiesRouter from './TechnologiesRouter'
 
-const router = Router();
+const router = Router()
 
-router.use('/technologies', TechnologiesRouter);
+router.use('/technologies', TechnologiesRouter)
 
-export default router;
+export default router
