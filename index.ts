@@ -11,3 +11,5 @@ import config from './configs/config';
 app.listen(config.PORT || 4000, () => {
   console.log(`Server running on port ${config.PORT}`.green);
 });
+
+export default app;

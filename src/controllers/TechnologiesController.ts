@@ -40,6 +40,6 @@ async function createOneTechnolgy(req: Request, res: Response<ResponseType>): Pr
   }
 }
 
-async function createTechnologies(req: Request, res: Response<ResponseType>): Promise<void | Response<ResponseType>> {}
+// async function createTechnologies(_: Request, __: Response<ResponseType>): Promise<void | Response<ResponseType>> {}
 
-export { getTechnologies, createOneTechnolgy, createTechnologies };
+export { getTechnologies, createOneTechnolgy };
