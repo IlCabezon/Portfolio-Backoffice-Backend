@@ -41,6 +41,14 @@
         {
           "checksVoidReturn": false
         }
+      ],
+      "space-before-function-paren": [
+        "error", 
+        {
+          "anonymous": "off",
+          "named": "off",
+          "asyncArrow": "off"
+        }
       ]
     },
     "extends": ["./node_modules/ts-standard/eslintrc.json"]

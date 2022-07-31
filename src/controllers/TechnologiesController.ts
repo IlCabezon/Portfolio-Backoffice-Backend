@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { ResponseType, ResponseRoutes } from '../types'
 import Technology from '../schemas/technologySchema'
 
-async function getTechnologies (_: Request, res: Response<ResponseType>): ResponseRoutes {
+async function getTechnologies(_: Request, res: Response<ResponseType>): ResponseRoutes {
   try {
     const techStack = await Technology.find()
 
@@ -18,7 +18,7 @@ async function getTechnologies (_: Request, res: Response<ResponseType>): Respon
   }
 }
 
-async function createOneTechnolgy (req: Request, res: Response<ResponseType>): Promise<void> {
+async function createOneTechnolgy(req: Request, res: Response<ResponseType>): Promise<void> {
   const { name } = req.body
 
   if (name === undefined) {
