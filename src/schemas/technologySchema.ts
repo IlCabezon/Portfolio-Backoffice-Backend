@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { Technologies } from '../types'
+import { Tech } from '../types'
 
-const technologySchema = new Schema<Technologies>({
+const technologySchema = new Schema<Tech>({
   name: {
     type: String,
     required: true,
@@ -9,5 +9,5 @@ const technologySchema = new Schema<Technologies>({
   }
 })
 
-const Technology = model<Technologies>('Technology', technologySchema)
+const Technology = model<Tech>('Technology', technologySchema)
 export default Technology

@@ -1,9 +1,10 @@
 import { Router } from 'express'
-import { getTechnologies, createOneTechnolgy } from '../controllers/TechnologiesController'
+import { getTechnologies, createOneTechnolgy, createTechnologies } from '../controllers/technologiesController'
 
 const router = Router()
 
 router.get('/', getTechnologies)
-router.post('/', createOneTechnolgy)
+router.post('/createTech', createOneTechnolgy)
+router.post('/createTechs', createTechnologies)
 
 export default router

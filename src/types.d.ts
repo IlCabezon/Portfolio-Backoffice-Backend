@@ -13,6 +13,6 @@ export interface ResponseType {
   err?: any | unknown
 }
 
-export interface Technologies {
+export interface Tech {
   name: string
 }

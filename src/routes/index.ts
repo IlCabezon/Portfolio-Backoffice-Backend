@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import TechnologiesRouter from './TechnologiesRouter'
+import TechnologiesRouter from './technologiesRouter'
 
 const router = Router()
 
