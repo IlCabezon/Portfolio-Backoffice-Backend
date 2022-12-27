@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getTechnologies, createOneTechnolgy, createTechnologies } from '../controllers/technologiesController'
+import { getTechnologies, createOneTechnolgy, createTechnologies } from '../controllers/TechnologiesController'
 
 const router = Router()
 

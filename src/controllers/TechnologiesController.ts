@@ -3,7 +3,7 @@ import { ResponseType, ResponseRoutes, Tech } from '../types'
 import Technology from '../schemas/technologySchema'
 import { inputCleaner } from '../utils/inputCleaner'
 
-async function getTechnologies(_: Request, res: Response<ResponseType>): ResponseRoutes {
+async function getTechnologies (_: Request, res: Response<ResponseType>): ResponseRoutes {
   try {
     const techStack = await Technology.find()
 
@@ -19,7 +19,7 @@ async function getTechnologies(_: Request, res: Response<ResponseType>): Respons
   }
 }
 
-async function createOneTechnolgy(req: Request, res: Response<ResponseType>): Promise<void> {
+async function createOneTechnolgy (req: Request, res: Response<ResponseType>): Promise<void> {
   const { name } = req.body
 
   if (name === undefined) {
