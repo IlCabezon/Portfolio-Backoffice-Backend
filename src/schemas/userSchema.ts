@@ -96,7 +96,7 @@ const userSchema = new Schema<UserType>({
   cell: {
     type: String
   },
-  id: {
+  identifier: {
     name: {
       type: String
     },

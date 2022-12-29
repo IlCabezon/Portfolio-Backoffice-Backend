@@ -6,7 +6,6 @@ let cacheConnection: CacheConnection = {
   connected: false,
   dbName: 'unconnected'
 }
-
 void (async () => {
   try {
     if (!cacheConnection.connected) {

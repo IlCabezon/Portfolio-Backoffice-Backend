@@ -59,10 +59,22 @@ export interface UserType {
   }
   phone: string
   cell: string
-  id: {
+  identifier: {
     name: string
     value: string
   }
   picture: String
   nat: string
+}
+
+export interface PostType {
+  uuid: string
+  _user: {
+    uuid: string,
+    username: string
+    picture: string
+  }
+  description: string
+  photo: string
+  likes: number
 }
