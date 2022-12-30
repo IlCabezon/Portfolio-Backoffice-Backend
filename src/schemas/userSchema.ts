@@ -1,5 +1,7 @@
-import { Schema, model } from 'mongoose';
+import { Schema, models, model } from 'mongoose';
 import { UserType } from '../types';
+import { v4 } from 'uuid';
+
 
 const userSchema = new Schema<UserType>({
   gender: {
@@ -62,7 +64,8 @@ const userSchema = new Schema<UserType>({
   },
   login: {
     uuid: {
-      type: String
+      type: String,
+      default: v4()
     },
     username: {
       type: String
@@ -106,11 +109,12 @@ const userSchema = new Schema<UserType>({
   },
   picture: {
     type: String,
+    default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
   },
   nat: {
     type: String
   }
 })
 
-const User = model<UserType>('User', userSchema);
-export default User;
+const User = model<UserType>('User', userSchema)
+export default models?.User || User

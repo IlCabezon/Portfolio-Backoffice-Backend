@@ -1,10 +1,10 @@
-import { Request, Response } from 'express'
-import { ResponseType, ResponseRoutes } from '../types'
+import { Request, Response } from 'express';
+import { ResponseType, ResponseRoutes } from '../types';
 import User from '../schemas/userSchema';
 
-export const getUsers = async (_: Request, res: Response<ResponseType>): ResponseRoutes => {
+const getUsers = async (_: Request, res: Response<ResponseType>): ResponseRoutes => {
   try {
-    const users = await User.find();
+    const users = await User.find({}, '-login.password');
 
     return res.status(200).json({
       data: users,
@@ -16,4 +16,8 @@ export const getUsers = async (_: Request, res: Response<ResponseType>): Respons
       message: 'Error ocurred on UserController.getUser'
     });
   }
+}
+
+export default {
+  getUsers
 }

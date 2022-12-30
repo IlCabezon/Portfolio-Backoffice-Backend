@@ -1,21 +1,22 @@
-import { Response } from 'express'
+import { Response } from 'express';
+import { Types } from 'mongoose';
 
-export type ResponseRoutes = Promise<Response<ResponseType>>
+export type ResponseRoutes = Promise<Response<ResponseType>>;
 
 export interface CacheConnection {
   connected: boolean
   dbName: string
-}
+};
 
 export interface ResponseType {
   message: string
   data?: any[]
   err?: any | unknown
-}
+};
 
 export interface Tech {
   name: string
-}
+};
 
 export interface UserType {
   gender: string
@@ -65,7 +66,7 @@ export interface UserType {
   }
   picture: String
   nat: string
-}
+};
 
 export interface PostType {
   uuid: string
@@ -75,6 +76,18 @@ export interface PostType {
     picture: string
   }
   description: string
-  photo: string
-  likes: number
-}
+  photos: Photo[]
+  uploadDate: Date
+  likes: {
+    amount: Number,
+    users: String[]
+  }
+};
+
+interface Photo {
+  originalWidth: number,
+  originalHeight: number,
+  avg_color: string,
+  alt: string,
+  src: string
+};

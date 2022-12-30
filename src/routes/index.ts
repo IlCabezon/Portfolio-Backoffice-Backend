@@ -1,8 +1,10 @@
-import { Router } from 'express'
-import UserRouter from './UserRouter'
+import { Router } from 'express';
+import UserRouter from './UserRouter';
+import PostsRouter from './PostsRouter';
 
-const router = Router()
+const router = Router();
 
-router.use('/', UserRouter)
+router.use('/users', UserRouter)
+router.use('/posts', PostsRouter)
 
 export default router
